@@ -23,6 +23,8 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     initPlatformState();
+
+    _easyEventPlugin.test().then((value) => debugPrint("test -> $value"));
   }
 
   // Platform messages are asynchronous, so we initialize in an async method.

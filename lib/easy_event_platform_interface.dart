@@ -26,4 +26,8 @@ abstract class EasyEventPlatform extends PlatformInterface {
   Future<String?> getPlatformVersion() {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
+
+  Future<String?> test() {
+    throw UnimplementedError('platformVersion() has not been implemented.');
+  }
 }

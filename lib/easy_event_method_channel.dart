@@ -14,4 +14,9 @@ class MethodChannelEasyEvent extends EasyEventPlatform {
     final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
     return version;
   }
+
+  @override
+  Future<String?> test() async {
+    return await methodChannel.invokeMethod<String>("test");
+  }
 }

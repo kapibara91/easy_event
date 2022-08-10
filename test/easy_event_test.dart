@@ -10,6 +10,9 @@ class MockEasyEventPlatform
 
   @override
   Future<String?> getPlatformVersion() => Future.value('42');
+
+  @override
+  Future<String?> test() => Future.value("123");
 }
 
 void main() {
