@@ -1,3 +1,4 @@
+import 'package:easy_event/easy_event_color_rgb.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:easy_event/easy_event.dart';
 import 'package:easy_event/easy_event_platform_interface.dart';
@@ -13,6 +14,12 @@ class MockEasyEventPlatform
 
   @override
   Future<String?> test() => Future.value("123");
+
+  @override
+  Future<bool> addEventCalendar(String title, ColorRGB colorRGB) {
+    // TODO: implement addEventCalendar
+    throw UnimplementedError();
+  }
 }
 
 void main() {

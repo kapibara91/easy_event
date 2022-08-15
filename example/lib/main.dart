@@ -1,8 +1,10 @@
+import 'package:easy_event/easy_event_color_rgb.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';
 import 'package:easy_event/easy_event.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 void main() {
   runApp(const MyApp());
@@ -56,8 +58,19 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text('Plugin example app'),
         ),
-        body: Center(
-          child: Text('Running on: $_platformVersion\n'),
+        body: Column(
+          children: [
+            Center(
+              child: Text('Running on: $_platformVersion\n'),
+            ),
+            MaterialButton(onPressed: () async {
+
+              if (await Permission.calendar.request().isGranted) {
+                _easyEventPlugin.addEventCalendar("testCalendar111", ColorRGB(0, 0, 0)).then((value) => debugPrint("testAddCalendar -> $value"));
+              }
+
+            }, child: const Text("日历权限"),)
+          ],
         ),
       ),
     );

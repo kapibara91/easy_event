@@ -45,5 +45,7 @@
 	<false/>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
+	<key>NSCalendarsUsageDescription</key>
+	<string>666</string>
 </dict>
 </plist>

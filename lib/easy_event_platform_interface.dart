@@ -1,5 +1,6 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
+import 'easy_event_color_rgb.dart';
 import 'easy_event_method_channel.dart';
 
 abstract class EasyEventPlatform extends PlatformInterface {
@@ -28,6 +29,10 @@ abstract class EasyEventPlatform extends PlatformInterface {
   }
 
   Future<String?> test() {
+    throw UnimplementedError('platformVersion() has not been implemented.');
+  }
+
+  Future<bool> addEventCalendar(String title, ColorRGB colorRGB) {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
+import 'easy_event_color_rgb.dart';
 import 'easy_event_platform_interface.dart';
 
 /// An implementation of [EasyEventPlatform] that uses method channels.
@@ -18,5 +19,10 @@ class MethodChannelEasyEvent extends EasyEventPlatform {
   @override
   Future<String?> test() async {
     return await methodChannel.invokeMethod<String>("test");
+  }
+
+  @override
+  Future<bool> addEventCalendar(String title, ColorRGB colorRGB) async {
+    return await methodChannel.invokeMethod("addEventCalendar", {"title": title, "colorRGB": colorRGB.toMap()});
   }
 }
